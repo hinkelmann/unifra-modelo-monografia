@@ -1,0 +1,189 @@
+%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%
+%%                                                          %%
+%%              tfg.tex - v0.04 Hinkelmann                  %%
+%%                                                          %%
+%% Unifra - Centro Universitário Franciscano                %%
+%% Modelo de Trabalho acadêmico                             %%
+%%                                                          %%
+%% Guilherme Hinkelmann <guilherme@hinkelmann.com.br>       %%
+%%                                                          %%
+%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%%-%% 
+\documentclass[monografia]{unifra-abntex2}
+
+% ---
+% PACOTES
+% ---
+%\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{pslatex}			% Usa a fonte Times News Roman			
+\usepackage{makeidx}            % Cria o indice
+\usepackage{hyperref}  			% Controla a formação do índice
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{lipsum}				% para geração de dummy text
+%\usepackage[printonlyused]{acronym}
+%\usepackage[table]{xcolor}
+
+% ----------------------------------------------------------
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ----------------------------------------------------------
+%
+% Título:
+%	1. Título em português
+%	2. Título em inglês
+
+\titulo{COMPUTAÇÃO QUÂNTICA:\\ SIMULAÇÃO E LINGUAGENS DE PROGRAMAÇÃO QUÂNTICA}{}%
+
+%
+% Autor:
+%	1. Nome completo do autor
+%	2. Formato de nome para bibliografia
+
+\autor{Guilherme Hinkelmann}
+      {Hinkelmann, Guilherme}
+%
+% Orientador
+%   1. Título e nome completo do Orientador
+%   2. Nome da Instituição abreviado
+\orientador{Prof. Dr. Ciclano Master Dinossauro}{UNIFRA}
+
+%
+% Local
+%   1. Cidade onde será defendia a monográfia 
+% Data
+%   1.ano da defesa da monografia
+\local{Santa Maria, RS}
+\data{2013}
+
+% ----
+% Informações sobre a Instituição de ensino e sobre o curso
+% ----
+%
+% Intituição
+%   1. Nome da instuição
+% Área do curso
+%   1. Nome da área que curso pertence
+% Curso
+%   1. Nome do Curso
+% Grau do curso
+%   1.Nome do grau do curso
+\instituicao{Centro Universitário Franciscano}
+\cursoarea{Ciências Tecnológicas}
+\cursonome{Sistemas de Informação}
+\cursograu{Bacharel} 
+
+
+% ----
+% Informações para a Folha de Aprovação
+% ----
+% Data de Aprovação
+\dataaprovacao{ ........ }{ ....................................... }{ ...............}
+
+% Banca
+%   1. Titulo e nome completo do professor da banca
+%   2. Nome da Instituição abreviado
+\bancaa{Prof. Dr. Fulano de Bagual}{UNIFRA}
+\bancab{Prof. Dr. Ciclano de Louco}{UNIFRA}
+% ----------------------------------------------------------
+% compila o indice
+% ----------------------------------------------------------
+\makeindex
+% ----------------------------------------------------------
+% Compila a lista de abreviaturas e siglas
+% ----------------------------------------------------------
+%\makenomenclature
+% ----------------------------------------------------------
+% Inserir folha de aprovação digitalizada com as assinaturas
+% ----------------------------------------------------------
+%\inserirfolhaaprovacao{folhaAprovacao.pdf}
+
+
+% ----------------------------------------------------------
+% Início do documento
+% ----------------------------------------------------------
+
+\begin{document}
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+\pretextual
+% ---
+% Insere Capa, Folha de rosto e folha de aprovação (se inserida).
+% ---
+\maketitle
+% ----------------------------------------------------------
+% Imprimir Dedicatória, Agradecimentos, Epígrafe
+% ----------------------------------------------------------
+%\imprimirdedicatoria{}
+%\imprimiragradecimentos{ }
+
+\imprimirepigrafe{A cry of war emerges\\
+Echoes over the field\\
+Boldley charging the enemy lines\\
+-Amon Amarth
+}
+% ---
+% RESUMO e ABSTRACT
+% ---
+\include{cap/00_resumo_abstract}
+% ----------------------------------------------------------
+% inserir lista de ilustrações, tabelas, Abreviaturas e Sumário
+% ----------------------------------------------------------
+%\listailustracoes
+\listatabelas
+%\listasiglas{abrev/Abreviaturas}
+\sumario
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\mainmatter
+% ----------------------------------------------------------
+% Introdução, Desenvolvimento e Conclusão
+% ----------------------------------------------------------
+\input{cap/01_introducao}
+\input{cap/02_referencial_teorico}
+\input{cap/03_metodologia}
+\input{cap/04_resultados}
+\input{cap/05_conclusao}
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{bib/tfg_referencias}
+
+
+% ----------------------------------------------------------
+% Glossário
+% ----------------------------------------------------------
+%\glossary
+%
+% ----------------------------------------------------------
+% Apêndices e Anexos
+% ----------------------------------------------------------
+%\begin{apendicesenv}
+% include(extra/00_apendice)
+%\end{apendicesenv}
+%\begin{anexosenv}
+%\include{extra/01_anexo}
+%\end{anexosenv}
+
+
+%finaliza o documento 
+\end{document}
+
+
